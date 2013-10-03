@@ -62,36 +62,59 @@ VictimInfo();
 
 //Write two versions of the function: one that uses side effects and one that is pure.
 
-// Pure function
+// Pure Function #1
 
+
+// var myArray = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
+
+// var cleanArray = function(array) {
+// 	var newArray = myArray.filter(Boolean);
+// 	return newArray;
+// }
+
+// cleanArray(myArray);
+
+// Side Effects! Function #1
+
+// var myArray = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
+
+// var cleanArray = function(array) {
+// 	myArray = myArray.filter(Boolean);
+// 	return newArray;
+// }
+
+// cleanArray(myArray);
+
+// Pure Function #2
 
 var myArray = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
 
 var cleanArray = function(array) {
-	var newArray = myArray.filter(Boolean);
+	var newArray = [];
+	for (var i = 0; i < array.length; i++) {
+		Boolean(myArray[i]) === true ? newArray.push(myArray[i]) : false;
+	}
 	return newArray;
 }
 
 cleanArray(myArray);
 
-// Side Effects! Function
+
+// Side Effects! Function #2
+
 
 var myArray = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
 
 var cleanArray = function(array) {
-	myArray = myArray.filter(Boolean);
-	return newArray;
+	var newArray = [];
+	for (var i = 0; i < array.length; i++) {
+		Boolean(myArray[i]) === true ? newArray.push(myArray[i]) : false;
+	}
+	myArray = newArray;
+	return myArray;
 }
 
 cleanArray(myArray);
-
-
-
-
-
-
-
-
 
 
 
