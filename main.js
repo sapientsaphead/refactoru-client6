@@ -117,4 +117,46 @@ var cleanArray = function(array) {
 cleanArray(myArray);
 
 
+// Raine's Solutions
+
+// Impure
+
+var arr = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
+
+function removeFalseyImpure () {
+	//loop through each item in teh array
+	for(var i=0, len=arr.length; i<len; i++){
+		//check if the item is falsey
+		if (!arr[i]) {
+			//SAME: if(arr[i] != false)
+				//if so, remove it with slice
+				arr.splice(i,1);
+
+				//compensate for modifying the array
+				i--;
+		}
+	}
+}
+
+// Pure
+var arr = [1, 2, "three", "", null, undefined, NaN, false, 5, "kitten",0];
+
+func
+
+function removeFalseyImpure (arr) {
+	//create empty array to store truthy values to return
+	var output = [];
+
+	//loop through each item in the array
+	for(var i=0, len=arr.length; i<len; i++){
+
+		//check if the array item is truthy
+		if(arr[i]) {
+
+			//if so, push it to the output array
+			output.push(arr[i]);
+		}
+	}
+	return output;
+}
 
